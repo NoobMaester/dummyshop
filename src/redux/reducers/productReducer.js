@@ -7,8 +7,9 @@ const initialState = {
     products: [],
 };
 
-//DEFINING A REDUCER
+//DEFINING REDUCERS
 
+//PROCUCT REDUCER
 export const productReducer = (state = initialState, {type, payload}) => {
 
     switch(type) {
@@ -18,3 +19,14 @@ export const productReducer = (state = initialState, {type, payload}) => {
             return state;
     }
 }
+
+//SELECTED PRODUCT REDUCER
+export const selectedProductReducer = (state = {}, {type, payload}) => {
+    switch (type) {
+        case ActionTypes.SELECTED_PRODUCT:
+            return {...state, ...payload}
+        default:
+            return state;
+    }
+}
+
